@@ -7,6 +7,7 @@
     </div>
     <header-menu v-else />
     <div class="flex justify-end h-full">
+      <global-search />
       <full-screen />
       <theme-mode />
       <toggle-lang />
@@ -20,6 +21,7 @@
 import { useThemeStore } from '@/store';
 import { useBasicLayout } from '@/composables';
 import GlobalLogo from '../global-logo/index.vue';
+import GlobalSearch from '../global-search/index.vue';
 import {
   FullScreen,
   GlobalBreadcrumb,

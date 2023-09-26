@@ -2,7 +2,6 @@ import type { PluginOption } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import unocss from '@unocss/vite';
-import VueDevtools from 'vite-plugin-vue-devtools';
 import pageRoute from '@soybeanjs/vite-plugin-vue-page-route';
 import unplugin from './unplugin';
 import mock from './mock';
@@ -19,7 +18,6 @@ export function setupVitePlugins(viteEnv: ImportMetaEnv): (PluginOption | Plugin
       }
     }),
     vueJsx(),
-    VueDevtools(),
     ...unplugin(viteEnv),
     unocss(),
     mock(viteEnv)

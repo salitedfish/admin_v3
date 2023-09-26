@@ -39,7 +39,7 @@ export const routeModel: Record<Auth.RoleType, AuthRoute.Route[]> = {
                 }
               ],
               meta: {
-                title: '二级菜单(有子菜单)',
+                title: '二级菜单',
                 i18nTitle: 'routes.multi-menu.first.second-new._value',
                 icon: 'mdi:menu'
               }
@@ -100,7 +100,7 @@ export const routeModel: Record<Auth.RoleType, AuthRoute.Route[]> = {
                 }
               ],
               meta: {
-                title: '二级菜单(有子菜单)',
+                title: '二级菜单',
                 i18nTitle: 'routes.multi-menu.first.second-new._value',
                 icon: 'mdi:menu'
               }
@@ -161,7 +161,7 @@ export const routeModel: Record<Auth.RoleType, AuthRoute.Route[]> = {
                 }
               ],
               meta: {
-                title: '二级菜单(有子菜单)',
+                title: '二级菜单',
                 i18nTitle: 'routes.multi-menu.first.second-new._value',
                 icon: 'mdi:menu'
               }

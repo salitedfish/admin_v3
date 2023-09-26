@@ -75,7 +75,7 @@ const locale: I18nType.Schema = {
         _value: '一级菜单',
         second: '二级菜单',
         'second-new': {
-          _value: '二级菜单(有子菜单)',
+          _value: '二级菜单',
           third: '三级菜单'
         }
       }
