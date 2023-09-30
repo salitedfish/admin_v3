@@ -54,11 +54,6 @@ const locale: I18nType.Schema = {
       swiper: 'Swiper',
       video: '视频'
     },
-    'auth-demo': {
-      _value: '权限示例',
-      permission: '切换权限',
-      super: '超级管理员可见'
-    },
     function: {
       _value: '功能',
       tab: 'Tab页签'
@@ -189,11 +184,7 @@ const locale: I18nType.Schema = {
         rememberMe: '记住我',
         forgetPassword: '忘记密码？',
         register: '注册账号',
-        otherAccountLogin: '其他账号登录',
-        otherLoginMode: '其他登录方式',
-        superAdmin: '超级管理员',
-        admin: '管理员',
-        user: '普通用户'
+        otherLoginMode: '其他登录方式'
       },
       codeLogin: {
         title: '验证码登录',

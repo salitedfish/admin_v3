@@ -1,51 +1,60 @@
-import { UltraFetch, useGetLStorage } from '@ultra-man/noa';
+import { UltraFetch } from '@ultra-man/noa';
 import { useRouterPush } from '@/composables';
-import { getServiceEnvConfig } from '~/.env-config';
+import { localStg } from '@/utils';
+import { RequestCodeState } from '@/enum/api';
+// import { getServiceEnvConfig } from '~/.env-config';
 
-export enum RequestCodeState {
-  SUCCESS = 0,
-  ERROR = -1,
-  LOGGED_IN_EXPIRED = 301,
-  NOT_LOGGED_IN = 302,
-  ACCOUNT_FROZEN = 303
-}
+// const { proxyPattern } = getServiceEnvConfig(import.meta.env);
 
-const { proxyPattern } = getServiceEnvConfig(import.meta.env);
-const routerPush = useRouterPush();
+const routerPush = useRouterPush(false);
 
 export const ultraFetch = new UltraFetch(
+  /**
+   * 请求配置
+   */
   {
-    baseURL: proxyPattern,
+    // baseURL: proxyPattern,
+    baseURL: '/mock',
     headers: {
       'Content-Type': 'application/json'
     },
     credentials: 'include'
   },
   {
+    /**
+     * 请求拦截器
+     * @param config
+     * @returns
+     */
     reqHandler: config => {
-      config.headers = { ...config.headers, ...{ authentication: useGetLStorage('token')('') as string } };
+      config.headers = { ...config.headers, ...{ Authorization: localStg.get('token') || '' } };
 
       return config;
     },
-    resHandler: response => {
+    /**
+     * 响应拦截器
+     * @param response
+     * @returns
+     */
+    resHandler: async response => {
       if (!response) {
         routerPush.toLogin();
-        window.$notification?.info({
-          title: '123'
+        window.$notification?.error({
+          title: '未知异常，可尝试刷新页面重试'
         });
-        // commonNotify('error', '网络异常！');
       } else if (response.code === RequestCodeState.SUCCESS) {
         return response;
-      } else if (response.code === RequestCodeState.ERROR) {
-        // commonNotify('warning', message || '网络异常！');
-      } else {
-        // commonNotify('warning', message || '网络异常！');
       }
 
       return response;
     },
+    /**
+     *错误拦截器
+     */
     errHandler: () => {
-      // commonNotify('error', '未知异常，可尝试刷新页面！');
+      window.$notification?.error({
+        title: '未知异常，可尝试刷新页面重试'
+      });
     }
   }
 );

@@ -14,7 +14,7 @@
 
 <script lang="ts" setup>
 import { useThemeStore } from '@/store';
-import { useBoolean } from '@/hooks';
+import { useBoolean } from '@/composables';
 import { SearchModal } from './components';
 
 defineOptions({ name: 'GlobalSearch' });

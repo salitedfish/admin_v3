@@ -57,7 +57,6 @@
     "@soybeanjs/vue-materials": "0.2.0",
     "@ultra-man/noa": "^0.0.44",
     "@vueuse/core": "10.4.1",
-    "axios": "1.5.0",
     "clipboard": "2.0.11",
     "colord": "2.9.3",
     "crypto-js": "4.1.1",

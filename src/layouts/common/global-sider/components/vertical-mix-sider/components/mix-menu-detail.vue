@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import type { Component } from 'vue';
-import { useBoolean } from '@/hooks';
+import { useBoolean } from '@/composables';
 
 defineOptions({ name: 'MixMenuDetail' });
 

@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import { useRouteStore } from '@/store';
-import { useLoading } from '@/hooks';
+import { useLoading } from '@/composables';
 
 defineOptions({ name: 'ReloadButton' });
 

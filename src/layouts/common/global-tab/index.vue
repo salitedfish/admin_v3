@@ -14,7 +14,7 @@ import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useElementBounding } from '@vueuse/core';
 import { useTabStore, useThemeStore } from '@/store';
-import { useDeviceInfo } from '@/composables';
+import { useDeviceInfo } from '@/utils';
 import { ReloadButton, TabDetail } from './components';
 
 defineOptions({ name: 'GlobalTab' });

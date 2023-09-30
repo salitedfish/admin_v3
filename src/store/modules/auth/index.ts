@@ -82,7 +82,7 @@ export const useAuthStore = defineStore('auth-store', {
       this.resetAuthStore();
     },
     /**
-     * 根据token进行登录
+     * 根据token查询用户信息，查到后才登录成功
      * @param backendToken - 返回的token
      */
     async loginByToken(backendToken: ApiAuth.Token) {
@@ -94,13 +94,13 @@ export const useAuthStore = defineStore('auth-store', {
       localStg.set('refreshToken', refreshToken);
 
       // 获取用户信息
-      const { data } = await fetchUserInfo();
-      if (data) {
+      const res = await fetchUserInfo();
+      if (res && res.data) {
         // 成功后把用户信息存储到缓存中
-        localStg.set('userInfo', data);
+        localStg.set('userInfo', res.data);
 
         // 更新状态
-        this.userInfo = data;
+        this.userInfo = res.data;
         this.token = token;
 
         successFlag = true;
@@ -115,40 +115,40 @@ export const useAuthStore = defineStore('auth-store', {
      */
     async login(userName: string, password: string) {
       this.loginLoading = true;
-      const { data } = await fetchLogin(userName, password);
-      if (data) {
-        await this.handleActionAfterLogin(data);
+      const res = await fetchLogin(userName, password);
+      if (res && res.data) {
+        await this.handleActionAfterLogin(res.data);
       }
       this.loginLoading = false;
-    },
+    }
     /**
      * 更换用户权限(切换账号)
      * @param userRole
      */
-    async updateUserRole(userRole: Auth.RoleType) {
-      const { resetRouteStore, initAuthRoute } = useRouteStore();
+    // async updateUserRole(userRole: Auth.RoleType) {
+    //   const { resetRouteStore, initAuthRoute } = useRouteStore();
 
-      const accounts: Record<Auth.RoleType, { userName: string; password: string }> = {
-        super: {
-          userName: 'Super',
-          password: 'super123'
-        },
-        admin: {
-          userName: 'Admin',
-          password: 'admin123'
-        },
-        user: {
-          userName: 'User01',
-          password: 'user01123'
-        }
-      };
-      const { userName, password } = accounts[userRole];
-      const { data } = await fetchLogin(userName, password);
-      if (data) {
-        await this.loginByToken(data);
-        resetRouteStore();
-        initAuthRoute();
-      }
-    }
+    //   const accounts: Record<Auth.RoleType, { userName: string; password: string }> = {
+    //     super: {
+    //       userName: 'Super',
+    //       password: 'super123'
+    //     },
+    //     admin: {
+    //       userName: 'Admin',
+    //       password: 'admin123'
+    //     },
+    //     user: {
+    //       userName: 'User01',
+    //       password: 'user01123'
+    //     }
+    //   };
+    //   const { userName, password } = accounts[userRole];
+    //   const { data } = await fetchLogin(userName, password);
+    //   if (data) {
+    //     await this.loginByToken(data);
+    //     resetRouteStore();
+    //     initAuthRoute();
+    //   }
+    // }
   }
 });

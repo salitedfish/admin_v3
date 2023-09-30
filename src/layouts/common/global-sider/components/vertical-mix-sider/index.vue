@@ -24,8 +24,7 @@
 import { computed, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useAppStore, useRouteStore, useThemeStore } from '@/store';
-import { useRouterPush } from '@/composables';
-import { useBoolean } from '@/hooks';
+import { useRouterPush, useBoolean } from '@/composables';
 import { translateMenuLabel } from '@/utils';
 import { GlobalLogo } from '@/layouts/common';
 import { $t } from '@/locales';

@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import type { Component } from 'vue';
-import { loginModuleLabels } from '@/constants';
+import { loginModuleLabels } from '@/config';
 import { useThemeStore } from '@/store';
 import { getColorPalette, mixColor } from '@/utils';
 import { $t } from '@/locales';
@@ -49,6 +49,9 @@ interface LoginModule {
   component: Component;
 }
 
+/**
+ * 对应各种登录方式的组件和文本
+ */
 const modules: LoginModule[] = [
   { key: 'pwd-login', label: loginModuleLabels['pwd-login'], component: PwdLogin },
   { key: 'code-login', label: loginModuleLabels['code-login'], component: CodeLogin },

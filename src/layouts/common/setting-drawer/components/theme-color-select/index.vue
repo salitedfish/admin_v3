@@ -18,7 +18,7 @@
 import { computed } from 'vue';
 import { isInTraditionColors } from '@/settings';
 import { useThemeStore } from '@/store';
-import { useBoolean } from '@/hooks';
+import { useBoolean } from '@/composables';
 import { $t } from '@/locales';
 import { ColorCheckbox, ColorModal } from './components';
 

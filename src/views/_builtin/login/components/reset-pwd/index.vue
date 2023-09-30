@@ -42,8 +42,7 @@
 <script lang="ts" setup>
 import { reactive, ref, toRefs } from 'vue';
 import type { FormInst, FormRules } from 'naive-ui';
-import { useRouterPush } from '@/composables';
-import { useSmsCode } from '@/hooks';
+import { useRouterPush, useSmsCode } from '@/composables';
 import { formRules, getConfirmPwdRule } from '@/utils';
 import { $t } from '@/locales';
 

@@ -54,11 +54,6 @@ const locale: I18nType.Schema = {
       swiper: 'Swiper',
       video: 'Video'
     },
-    'auth-demo': {
-      _value: 'Auth Demo',
-      permission: 'Toggle Permission',
-      super: 'Super Auth'
-    },
     function: {
       _value: 'Function',
       tab: 'System Tab'
@@ -189,11 +184,7 @@ const locale: I18nType.Schema = {
         rememberMe: 'Remember me',
         forgetPassword: 'Forget password?',
         register: 'Register account',
-        otherAccountLogin: 'Other Account Login',
-        otherLoginMode: 'Other Login Mode',
-        superAdmin: 'Super Administrator',
-        admin: 'Administrator',
-        user: 'Ordinary User'
+        otherLoginMode: 'Other Login Mode'
       },
       codeLogin: {
         title: 'Verification Code Login',

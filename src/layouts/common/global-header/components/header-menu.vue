@@ -29,6 +29,7 @@ const routeStore = useRouteStore();
 const theme = useThemeStore();
 const { routerPush } = useRouterPush();
 
+// 如果有i18nTitle则翻译，没有则使用label(路由title)
 const menus = computed(() => translateMenuLabel(routeStore.menus as App.GlobalMenuOption[]));
 const activeKey = computed(() => (route.meta?.activeMenu ? route.meta.activeMenu : route.name) as string);
 

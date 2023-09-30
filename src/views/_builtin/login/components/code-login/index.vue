@@ -40,8 +40,7 @@
 import { reactive, ref } from 'vue';
 import type { FormInst } from 'naive-ui';
 import { useAuthStore } from '@/store';
-import { useRouterPush } from '@/composables';
-import { useSmsCode } from '@/hooks';
+import { useRouterPush, useSmsCode } from '@/composables';
 import { formRules, getImgCodeRule } from '@/utils';
 import { $t } from '@/locales';
 

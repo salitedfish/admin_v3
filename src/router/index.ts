@@ -10,6 +10,7 @@ const { VITE_HASH_ROUTE = 'N', VITE_BASE_URL } = import.meta.env;
 
 export const router = createRouter({
   history: VITE_HASH_ROUTE === 'Y' ? createWebHashHistory(VITE_BASE_URL) : createWebHistory(VITE_BASE_URL),
+  // 这里初始化的路由都是些固定路由，菜单路由等登录后根据权限动态生成
   routes: transformAuthRouteToVueRoutes(constantRoutes),
   scrollBehavior
 });

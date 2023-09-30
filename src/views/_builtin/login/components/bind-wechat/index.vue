@@ -26,8 +26,7 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue';
 import type { FormInst } from 'naive-ui';
-import { useRouterPush } from '@/composables';
-import { useSmsCode } from '@/hooks';
+import { useRouterPush, useSmsCode } from '@/composables';
 import { formRules } from '@/utils';
 import { $t } from '@/locales';
 

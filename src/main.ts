@@ -1,7 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import AppLoading from './components/common/app-loading.vue';
-import { setupDirectives } from './directives';
 import { setupRouter } from './router';
 import { setupAssets } from './plugins';
 import { setupStore } from './store';
@@ -20,9 +19,6 @@ async function setupApp() {
 
   // store plugin: pinia
   setupStore(app);
-
-  // vue custom directives
-  setupDirectives(app);
 
   // vue router
   await setupRouter(app);

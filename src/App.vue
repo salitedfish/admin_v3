@@ -19,6 +19,7 @@ import { useGlobalEvents } from '@/composables';
 
 const theme = useThemeStore();
 
+/** 监听全局事件 */
 subscribeStore();
 useGlobalEvents();
 </script>
