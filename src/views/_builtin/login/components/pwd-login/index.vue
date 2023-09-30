@@ -44,7 +44,7 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue';
 import type { FormInst, FormRules } from 'naive-ui';
-import { loginModuleLabels } from '@/config';
+import { loginModuleLabels } from '@/constants';
 import { useAuthStore } from '@/store';
 import { useRouterPush } from '@/composables';
 import { formRules } from '@/utils';
@@ -76,3 +76,4 @@ async function handleSubmit() {
 </script>
 
 <style scoped></style>
+~/src/constants

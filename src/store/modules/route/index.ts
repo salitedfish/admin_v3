@@ -117,6 +117,10 @@ export const useRouteStore = defineStore('route-store', {
         throw new Error('userId 不能为空!');
       }
 
+      /**
+       * 从接口获取完整的路由结构
+       * 如果接口没按要求的格式返回，则需要自己再写方法处理
+       **/
       const res = await fetchUserRoutes(userId);
 
       if (res && res.data) {

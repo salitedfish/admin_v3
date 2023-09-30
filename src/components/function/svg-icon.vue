@@ -17,7 +17,7 @@ defineOptions({ name: 'SvgIcon' });
 
 /**
  * 图标组件
- * - 支持iconify和本地svg图标
+ * - 支持iconify和本地svg图标，使用iconify第一次渲染需要联网，否则无法获取icon，使用后会保存在localstorage中
  * - 同时传递了icon和localIcon，localIcon会优先渲染
  */
 interface Props {

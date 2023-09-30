@@ -3,7 +3,7 @@ import SvgIcon from '@/components/function/svg-icon.vue';
 
 /**
  * 图标渲染
- * - 用于vue的render函数
+ * - 用于vue的render函数，支持iconify远程库和本地icon
  */
 export default function useIconRender() {
   interface IconConfig {

@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import type { Component } from 'vue';
-import { loginModuleLabels } from '@/config';
+import { loginModuleLabels } from '@/constants';
 import { useThemeStore } from '@/store';
 import { getColorPalette, mixColor } from '@/utils';
 import { $t } from '@/locales';
@@ -79,3 +79,4 @@ const bgColor = computed(() => {
 </script>
 
 <style scoped></style>
+~/src/constants
