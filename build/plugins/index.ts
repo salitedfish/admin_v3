@@ -23,8 +23,12 @@ export function setupVitePlugins(viteEnv: ImportMetaEnv): (PluginOption | Plugin
     mock(viteEnv)
   ];
 
-  if (viteEnv.VITE_SOYBEAN_ROUTE_PLUGIN === 'Y') {
-    plugins.push(pageRoute());
+  if (viteEnv.VITE_AUTO_ROUTE_PLUGIN === 'Y') {
+    plugins.push(
+      pageRoute({
+        onRouteModuleGenerate: name => !name.includes('built-in')
+      })
+    );
   }
 
   return plugins;

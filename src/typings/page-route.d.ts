@@ -25,6 +25,7 @@ declare namespace PageRoute {
     | 'multi-menu'
     | 'multi-menu_first'
     | 'multi-menu_first_second-new'
+    | 'multi-menu_first_second-new_third-new'
     | 'multi-menu_first_second-new_third'
     | 'multi-menu_first_second';
 
@@ -40,6 +41,7 @@ declare namespace PageRoute {
     | 'constant-page'
     | 'login'
     | 'not-found'
+    | 'multi-menu_first_second-new_third-new'
     | 'multi-menu_first_second-new_third'
     | 'multi-menu_first_second'
   >;

@@ -35,20 +35,12 @@
     "UnoCSS"
   ],
   "scripts": {
-    "dev": "cross-env VITE_SERVICE_ENV=dev vite",
-    "dev:test": "cross-env VITE_SERVICE_ENV=test vite",
-    "dev:prod": "cross-env VITE_SERVICE_ENV=prod vite",
-    "build": "npm run typecheck && cross-env VITE_SERVICE_ENV=prod vite build",
-    "build:dev": "npm run typecheck && cross-env VITE_SERVICE_ENV=dev vite build",
-    "build:test": "npm run typecheck && cross-env VITE_SERVICE_ENV=test vite build",
-    "build:vercel": "cross-env VITE_HASH_ROUTE=Y VITE_VERCEL=Y vite build",
+    "dev": "vite",
+    "dev:test": "vite --mode test",
+    "build": "npm run typecheck && vite build",
     "preview": "vite preview",
     "typecheck": "vue-tsc --noEmit --skipLibCheck",
     "lint": "eslint . --fix",
-    "format": "soy prettier-write",
-    "commit": "soy git-commit",
-    "cleanup": "soy cleanup",
-    "update-pkg": "soy ncu",
     "tsx": "tsx",
     "logo": "tsx ./scripts/logo.ts"
   },
@@ -75,7 +67,7 @@
   "devDependencies": {
     "@iconify/json": "2.2.118",
     "@iconify/vue": "4.1.1",
-    "@soybeanjs/cli": "0.7.1",
+    "@soybeanjs/cli": "^0.7.1",
     "@soybeanjs/vite-plugin-vue-page-route": "0.0.10",
     "@types/crypto-js": "4.1.2",
     "@types/node": "20.6.3",

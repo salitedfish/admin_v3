@@ -64,7 +64,7 @@ interface ImportMetaEnv {
   /** hash路由模式 */
   readonly VITE_HASH_ROUTE?: 'Y' | 'N';
   /** 是否应用自动生成路由的插件 */
-  readonly VITE_SOYBEAN_ROUTE_PLUGIN?: 'Y' | 'N';
+  readonly VITE_AUTO_ROUTE_PLUGIN?: 'Y' | 'N';
   /** 是否是部署的vercel */
   readonly VITE_VERCEL?: 'Y' | 'N';
 }
