@@ -17,8 +17,8 @@ dependencies:
     specifier: 0.2.0
     version: 0.2.0(vue@3.3.4)
   '@ultra-man/noa':
-    specifier: ^0.0.44
-    version: 0.0.44
+    specifier: ^0.0.46
+    version: 0.0.46
   '@vueuse/core':
     specifier: 10.4.1
     version: 10.4.1(vue@3.3.4)
@@ -1547,9 +1547,8 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: true
 
-  /@ultra-man/noa@0.0.44:
-    resolution: {integrity: sha512-2mjRhvSqB1M44IWJ38e2SMr2zOQ77Pilgazyz1IcQVAPaUZ9zOCNaoejCfXCzmZNWSD8xtSGPpoPHBsZ8oh7VQ==}
-    hasBin: true
+  /@ultra-man/noa@0.0.46:
+    resolution: {integrity: sha512-TO1pSX8nlEpxk+Xgh+dPupIzadFAnIIICv2p02tXDzZCIFSchwyGTiGDLXbgxPyrIB2dyx0mnEbSNpsHOjNmVQ==}
     dependencies:
       clipboard: 2.0.11
       spark-md5: 3.0.2
