@@ -12,8 +12,8 @@
           :is="Component"
           v-if="app.reloadFlag"
           :key="route.fullPath"
-          :class="{ 'p-16px': showPadding }"
-          class="flex-grow bg-#f6f9f8 dark:bg-#101014 transition duration-300 ease-in-out"
+          :class="{ 'p-12px': showPadding }"
+          class="page flex-grow bg-#f6f9f8 dark:bg-#101014 transition duration-300 ease-in-out"
         />
       </keep-alive>
     </transition>
@@ -39,4 +39,8 @@ const theme = useThemeStore();
 const routeStore = useRouteStore();
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.page {
+  overflow-y: scroll;
+}
+</style>

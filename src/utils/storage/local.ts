@@ -1,4 +1,4 @@
-import { decrypt, encrypt } from '../crypto';
+// import { decrypt, encrypt } from '../crypto';
 interface StorageData<T> {
   value: T;
   expire: number | null;
@@ -13,7 +13,8 @@ function createLocalStorage<T extends StorageInterface.Local = StorageInterface.
       value,
       expire: expire !== null ? new Date().getTime() + expire * 1000 : null
     };
-    const json = encrypt(storageData);
+    // const json = encrypt(storageData);
+    const json = JSON.stringify(storageData);
     window.localStorage.setItem(key as string, json);
   }
 
@@ -22,7 +23,8 @@ function createLocalStorage<T extends StorageInterface.Local = StorageInterface.
     if (json) {
       let storageData: StorageData<T[K]> | null = null;
       try {
-        storageData = decrypt(json);
+        // storageData = decrypt(json);
+        storageData = JSON.parse(json);
       } catch {
         // 防止解析失败
       }

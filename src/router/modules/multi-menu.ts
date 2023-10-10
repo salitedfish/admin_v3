@@ -39,14 +39,16 @@ const multiMenu: AuthRoute.Route = {
           meta: {
             title: '二级菜单',
             i18nTitle: 'routes.multi-menu.first.second-new._value',
-            icon: 'mdi:menu'
+            icon: 'mdi:menu',
+            requiresAuth: true
           }
         }
       ],
       meta: {
         title: '一级菜单',
         i18nTitle: 'routes.multi-menu.first._value',
-        icon: 'mdi:menu'
+        icon: 'mdi:menu',
+        requiresAuth: true
       }
     }
   ],
@@ -54,7 +56,8 @@ const multiMenu: AuthRoute.Route = {
     title: '多级菜单',
     i18nTitle: 'routes.multi-menu._value',
     icon: 'carbon:menu',
-    order: 8
+    order: 8,
+    requiresAuth: true
   }
 };
 

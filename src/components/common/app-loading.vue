@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { sessionStg, getRgbOfColor } from '@/utils';
+import { getRgbOfColor, localStg } from '@/utils';
 import { $t } from '@/locales';
 import themeSettings from '@/settings/theme.json';
 
@@ -29,7 +29,7 @@ const loadingClasses = [
 
 function addThemeColorCssVars() {
   const defaultColor = themeSettings.themeColor;
-  const themeColor = sessionStg.get('themeColor') || defaultColor;
+  const themeColor = localStg.get('themeColor') || defaultColor;
 
   const { r, g, b } = getRgbOfColor(themeColor);
 

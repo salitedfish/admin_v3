@@ -2,7 +2,7 @@ import { UltraFetch } from '@ultra-man/noa';
 import { useRouterPush } from '@/composables';
 import { localStg } from '@/utils';
 import { RequestCodeState } from '@/enum/api';
-import { proxyPattern } from '~/src/constants';
+import { proxy } from '~/src/constants';
 
 const routerPush = useRouterPush(false);
 
@@ -11,7 +11,8 @@ export const ultraFetch = new UltraFetch(
    * 请求配置
    */
   {
-    baseURL: proxyPattern['/mock'],
+    baseURL: proxy['/mock'],
+    // baseURL: proxyPattern['/api'],
     headers: {
       'Content-Type': 'application/json'
     },

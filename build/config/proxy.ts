@@ -6,19 +6,19 @@ type ServiceEnv = Record<ServiceEnvType, ServiceEnvConfig[]>;
 const serviceEnv: ServiceEnv = {
   dev: [
     {
-      proxyPattern: '/proxy-pattern',
-      url: 'http://localhost:8080'
+      proxyPattern: '/api',
+      url: 'http://localhost:8083'
     }
   ],
   test: [
     {
-      proxyPattern: '/proxy-pattern',
+      proxyPattern: '/api',
       url: 'http://localhost:8080'
     }
   ],
   prod: [
     {
-      proxyPattern: '/proxy-pattern',
+      proxyPattern: '/api',
       url: 'http://localhost:8080'
     }
   ]

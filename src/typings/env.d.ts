@@ -9,7 +9,7 @@ type ServiceEnvType = 'dev' | 'test' | 'prod';
 /**
  * 代理哪些字段
  */
-type ProxyPattern = '/proxy-pattern' | '/mock';
+type ProxyPattern = '/api' | '/mock';
 
 /** 后台服务的环境配置 */
 interface ServiceEnvConfig {
@@ -28,12 +28,6 @@ interface ImportMetaEnv {
   readonly VITE_APP_TITLE: string;
   /** 项目描述 */
   readonly VITE_APP_DESC: string;
-  /**
-   * 权限路由模式:
-   * - static - 前端声明的静态
-   * - dynamic - 后端返回的动态
-   */
-  readonly VITE_AUTH_ROUTE_MODE: 'static' | 'dynamic';
   /** 路由首页的路径 */
   readonly VITE_ROUTE_HOME_PATH: AuthRoute.RoutePath;
   /** iconify图标作为组件的前缀 */

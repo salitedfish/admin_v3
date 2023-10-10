@@ -32,18 +32,6 @@ export function fetchUserInfo() {
 }
 
 /**
- * 获取用户路由数据
- * @param userId - 用户id
- * @description 后端根据用户id查询到对应的角色类型，并将路由筛选出对应角色的路由数据返回前端
- */
-export function fetchUserRoutes(userId: string) {
-  return ultraFetch.post<Api.Return<ApiRoute.Route>>({
-    URL: '/getUserRoutes',
-    body: JSON.stringify({ userId })
-  });
-}
-
-/**
  * 刷新token
  * @param refreshToken
  */

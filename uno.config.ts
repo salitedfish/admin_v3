@@ -10,6 +10,7 @@ export default defineConfig({
   },
   presets: [presetUno({ dark: 'class' })],
   transformers: [transformerDirectives()],
+  // 简写
   shortcuts: {
     'wh-full': 'w-full h-full',
     'flex-center': 'flex justify-center items-center',
@@ -46,6 +47,7 @@ export default defineConfig({
     'ellipsis-text': 'nowrap-hidden text-ellipsis',
     'transition-base': 'transition-all duration-300 ease-in-out'
   },
+  // 自定义属性
   theme: {
     colors: {
       primary: 'rgb(var(--primary-color))',
@@ -79,5 +81,17 @@ export default defineConfig({
       error_active: 'rgb(var(--error-color-active),0.1)',
       dark: '#18181c'
     }
-  }
+  },
+  // 自定义css匹配规则
+  rules: [
+    [
+      /^rounded-tlrb-(\d+)$/,
+      ([, d]: any) => ({
+        'border-top-left-radius': `${d / 4}rem`,
+        'border-top-right-radius': `${d / 4}rem`,
+        'border-bottom-left-radius': `${d / 4}rem`,
+        'border-bottom-right-radius': `${d / 4}rem`
+      })
+    ]
+  ]
 });

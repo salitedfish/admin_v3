@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { darkTheme } from 'naive-ui';
-import { sessionStg } from '@/utils';
+import { localStg } from '@/utils';
 import { getNaiveThemeOverrides, initThemeSettings } from './helpers';
 
 type ThemeState = Theme.Setting;
@@ -25,15 +25,12 @@ export const useThemeStore = defineStore('theme-store', {
   actions: {
     /** 重置theme状态 */
     resetThemeStore() {
-      sessionStg.remove('themeSettings');
+      localStg.remove('themeSettings');
       this.$reset();
     },
     /** 缓存主题配置 */
     cacheThemeSettings() {
-      const isProd = import.meta.env.PROD;
-      if (isProd) {
-        sessionStg.set('themeSettings', this.$state);
-      }
+      localStg.set('themeSettings', this.$state);
     },
     /** 设置暗黑模式 */
     setDarkMode(darkMode: boolean) {

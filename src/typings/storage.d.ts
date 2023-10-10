@@ -19,5 +19,9 @@ declare namespace StorageInterface {
     multiTabRoutes: App.GlobalTabRoute[];
     /** 本地语言缓存 */
     lang: I18nType.LangType;
+    /** 主题颜色 */
+    themeColor: string;
+    /** 主题配置 */
+    themeSettings: Theme.Setting;
   }
 }

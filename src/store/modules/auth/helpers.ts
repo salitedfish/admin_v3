@@ -10,7 +10,7 @@ export function getUserInfo() {
   const emptyInfo: Auth.UserInfo = {
     userId: '',
     userName: '',
-    userRole: 'user'
+    userRouts: []
   };
   const userInfo: Auth.UserInfo = localStg.get('userInfo') || emptyInfo;
 

@@ -1,19 +1,16 @@
 import type { GlobalThemeOverrides } from 'naive-ui';
 import { cloneDeep } from 'lodash-es';
 import { themeSetting } from '@/settings';
-import { sessionStg, addColorAlpha, getColorPalette } from '@/utils';
+import { localStg, addColorAlpha, getColorPalette } from '@/utils';
 
 /** 初始化主题配置 */
 export function initThemeSettings() {
-  const isProd = import.meta.env.PROD;
-  // 生产环境才缓存主题配置，本地开发实时调整配置更改配置的json
-  const storageSettings = sessionStg.get('themeSettings');
-
-  if (isProd && storageSettings) {
+  const storageSettings = localStg.get('themeSettings');
+  if (storageSettings) {
     return storageSettings;
   }
 
-  const themeColor = sessionStg.get('themeColor') || themeSetting.themeColor;
+  const themeColor = localStg.get('themeColor') || themeSetting.themeColor;
   const info = themeSetting.isCustomizeInfoColor ? themeSetting.otherColor.info : getColorPalette(themeColor, 7);
   const otherColor = { ...themeSetting.otherColor, info };
   const setting = cloneDeep({ ...themeSetting, themeColor, otherColor });
